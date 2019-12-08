@@ -1,7 +1,9 @@
-const {fuelData} = require("./fueldata")
+const { fuelData } = require("./fueldata");
 const { getFuelForMass, getFuelForMasses } = require("./part1");
 
 describe("Fuel for individual mass", () => {
+  let actual;
+  let expected;
   test("Given mass: 12, required fuel is 2", () => {
     expected = 2;
     actual = getFuelForMass(12);
@@ -28,6 +30,9 @@ describe("Fuel for individual mass", () => {
 });
 
 describe("Fuel for list of masses", () => {
+  let expected;
+  let actual;
+  
   test("Given masses [12, 14, 1969], required fuel is 658", () => {
     expected = 658;
     actual = getFuelForMasses([12, 14, 1969]);

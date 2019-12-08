@@ -2,6 +2,9 @@ const { fuelData } = require("./fueldata");
 const { getSumOfFuelsForMass, getSumOfFuelsForMasses } = require("./part2");
 
 describe("Fuel sum for individual mass", () => {
+  let expected;
+  let actual;
+
   test("Given mass: 12, required cumulative fuel is 2", () => {
     expected = 2;
     actual = getSumOfFuelsForMass(12);
@@ -28,6 +31,9 @@ describe("Fuel sum for individual mass", () => {
 });
 
 describe("Fuel sum for list of masses", () => {
+  let expected;
+  let actual;
+  
   test("Given masses [12, 14, 1969], required fuel is 658", () => {
     expected = 970;
     actual = getSumOfFuelsForMasses([12, 14, 1969]);

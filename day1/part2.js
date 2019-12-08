@@ -15,13 +15,13 @@ const getFuelsForMass = mass => {
 
 const getSumOfFuelsForMass = mass => {
   const fuels = getFuelsForMass(mass);
-  return fuels.reduce((sum, fuel) => (sum += fuel), 0);
+  return fuels.reduce((sum, fuel) => sum + fuel, 0);
 };
 
 const getSumOfFuelsForMasses = masses => {
   const cumulativeFuelSums = masses.map(getSumOfFuelsForMass);
   return cumulativeFuelSums.reduce(
-    (sum, cumulativeFuelSum) => (sum += cumulativeFuelSum),
+    (sum, cumulativeFuelSum) => sum + cumulativeFuelSum,
     0
   );
 };
