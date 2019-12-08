@@ -1,5 +1,5 @@
-const fuelCalculator = mass => Math.floor(mass / 3) - 2;
+const getFuelForMass = mass => Math.floor(mass / 3) - 2;
 
-const fuelSummation = masses =>
-  masses.reduce((sum, mass) => (sum += fuelCalculator(mass)), 0);
-module.exports = { fuelCalculator, fuelSummation };
+const getFuelForMasses = masses =>
+  masses.reduce((sum, mass) => (sum += getFuelForMass(mass)), 0);
+module.exports = { getFuelForMass, getFuelForMasses };

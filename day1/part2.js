@@ -1,29 +1,29 @@
-const { fuelCalculator } = require("./part1");
+const { getFuelForMass } = require("./part1");
 
-const getListOfFuels = mass => {
+const getFuelsForMass = mass => {
   let copyOfMass = mass; // for immutability
   const fuels = [];
 
   while (copyOfMass > 5) {
     // the lowest possible value for mass that will not yield a negative mass
-    const fuel = fuelCalculator(copyOfMass);
+    const fuel = getFuelForMass(copyOfMass);
     fuels.push(fuel);
     copyOfMass = fuel;
   }
   return fuels;
 };
 
-const cumulativeFuelCalculator = mass => {
-  const fuels = getListOfFuels(mass);
+const getSumOfFuelsForMass = mass => {
+  const fuels = getFuelsForMass(mass);
   return fuels.reduce((sum, fuel) => (sum += fuel), 0);
 };
 
-const cumulativeFuelSummer = masses => {
-  const cumulativeFuelSums = masses.map(cumulativeFuelCalculator);
+const getSumOfFuelsForMasses = masses => {
+  const cumulativeFuelSums = masses.map(getSumOfFuelsForMass);
   return cumulativeFuelSums.reduce(
     (sum, cumulativeFuelSum) => (sum += cumulativeFuelSum),
     0
   );
 };
 
-module.exports = { cumulativeFuelCalculator, cumulativeFuelSummer };
+module.exports = { getSumOfFuelsForMass, getSumOfFuelsForMasses };
