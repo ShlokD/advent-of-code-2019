@@ -1,5 +1,5 @@
 const {fuelData} = require("./fueldata")
-const { fuelCalculator, fuelSummation } = require("./day1");
+const { fuelCalculator, fuelSummation } = require("./part1");
 
 describe("Fuel Calculator", () => {
   test("Given mass: 12, required fuel is 2", () => {
